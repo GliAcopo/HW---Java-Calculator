@@ -10,7 +10,7 @@ public class Main {
     }
 }
 */
-
+// sudo apt-get install openjfx
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
