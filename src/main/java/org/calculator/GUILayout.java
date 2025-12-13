@@ -274,16 +274,6 @@ public class GUILayout {
         this.stage.hide();
     }
 
-    /* Not needed since the application automaically sets the size
-    public void refreshStage() {
-        // TODO: recalculate the button and screeen positions and sizes
-        this.stage.setScene(this.scene);
-    }
-    */
-
-
-
-
 
 
     /**

@@ -1,6 +1,7 @@
 package org.calculator;
 
 import javafx.scene.control.TextField;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -12,18 +13,18 @@ public class CalculatorController {
     // private boolean isStillCalculating = false;
 
     // NOTE: WE MUST NOT STORE THE TEXTFIELD TEXT IN THE BUTTON CONTROLLER CLASS
-    // If I ever want to make the calculator multi-threaded, I will need to make this method synchronized
-    public synchronized void calculate(TextField textField){
+    // If I ever want to make the calculator multithreaded, I will need to make this method synchronized
+    public synchronized void calculate(@NotNull TextField textField){
         textFieldText = textField.getText().trim(); // Trim is a method that removes the spaces at the start and end of the string https://www.w3schools.com/java/ref_string_trim.asp
         textField.clear(); // Clear the textField
 
-        // If there is no operation to perform, return, even if we do not return the app will work anyway, but by doing this we use less resources
+        // If there is no operation to perform, return, even if we do not return, the app will work anyway, but by doing this we use fewer resources
         if (textFieldText.isEmpty()) {
             return;
         }
 
         // Handle minus at the start: -3+6*9 -> 0-3+6*9
-        // So that we always get an ODD number of digits (this is because in the tokens loop i do get(i + 1) and I increase i by 2 each time
+        // So that we always get an ODD number of digits (this is because in the tokens loop i do get(i + 1) and I increase "i" by 2 each time
         if (textFieldText.startsWith("-")) {
             textFieldText = "0" + textFieldText;
         }
